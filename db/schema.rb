@@ -17,9 +17,13 @@ ActiveRecord::Schema.define(version: 20141117190050) do
   enable_extension "plpgsql"
 
   create_table "projects", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "title",      null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                       null: false
