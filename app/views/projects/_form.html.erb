@@ -1,8 +1,10 @@
 <%= form_for project do |form| %>
 
   <div>
-    <%= form.text_field :title %>
     <%= form.label :title %>
+    <%= form.text_field :title %>
+    <%= form.label :category %>
+    <%= form.select :category, Project::CATEGORY %>
   </div>
 
   <%= form.submit %>

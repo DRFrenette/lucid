@@ -1,3 +1,5 @@
 class Project < ActiveRecord::Base
-  has_one :user
+  CATEGORY = %w(setting character plot)
+
+  belongs_to :user
 end

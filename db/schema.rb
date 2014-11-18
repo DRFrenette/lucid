@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20141117190050) do
 
   create_table "projects", force: true do |t|
     t.string   "title",      null: false
+    t.string   "category",   null: false
     t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
