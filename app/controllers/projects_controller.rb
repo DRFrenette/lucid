@@ -1,15 +1,16 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
     @project = Project.new
+    @projects = Project.all
   end
 
   def create
-    project = current_user.projects.new(project_params)
-    if project.save
-      redirect_to root_path
+    @project = current_user.projects.new(project_params)
+    @projects = current_user.projects
+    if @project.save
+      redirect_to @project
     else
-      render root_path
+      render :index
     end
   end
 
@@ -20,7 +21,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).
-      permit(:title, :category)
+    params.require(:project).permit(:title, :category, :completed)
   end
 end
