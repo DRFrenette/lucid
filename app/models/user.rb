@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
 
   has_many :projects
   has_many :prompts
+  has_many :comments
 end
