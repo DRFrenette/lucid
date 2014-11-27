@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
 
   has_many :projects
+  has_many :prompts
 end
