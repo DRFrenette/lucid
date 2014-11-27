@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :projects, only: [:index, :create, :show] do
     resources :notecards, except: [:destroy]
+  resources :prompts, only: [:index, :new, :create] do
+    resources :comments, only: [:create]
   end
-  resources :prompts, only: [:index, :new, :create]
 
   root "projects#index"
 end

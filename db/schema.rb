@@ -23,6 +23,18 @@
 
   add_index "notecards", ["project_id"], name: "index_notecards_on_project_id", using: :btree
 
+ActiveRecord::Schema.define(version: 20141127171157) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "comments", force: true do |t|
+    t.text     "body",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+>>>>>>> Users can comment on prompts
   create_table "projects", force: true do |t|
     t.string   "title",      null: false
     t.string   "category",   null: false
