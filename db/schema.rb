@@ -17,10 +17,15 @@ ActiveRecord::Schema.define(version: 20141127171157) do
   enable_extension "plpgsql"
 
   create_table "comments", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "prompt_id",  null: false
     t.text     "body",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "comments", ["prompt_id"], name: "index_comments_on_prompt_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "projects", force: true do |t|
     t.string   "title",      null: false

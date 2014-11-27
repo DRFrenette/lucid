@@ -1,7 +1,7 @@
 class PromptsController < ApplicationController
 
   def index
-    @promtps = Prompt.all
+    @prompts = Prompt.all
   end
 
   def new
@@ -11,6 +11,11 @@ class PromptsController < ApplicationController
   def create
     @prompt = current_user.prompts.create(prompt_params)
     redirect_to prompts_path
+  end
+
+  def show
+    @prompt = Prompt.find(params[:id])
+    @comment = Comment.new
   end
 
   private
