@@ -1,8 +1,12 @@
 <div>
-  <h2>Title</h2>
-  <%= prompt.title %>
+<h2>Title</h2>
+<%= prompt.title %>
 </div>
 
 <div>
   <%= prompt.body %>
+</div>
+
+<div>
+  <p>Posted by: <% @prompt.user.email %></p>
 </div>

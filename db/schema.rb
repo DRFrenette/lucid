@@ -11,12 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141204211152) do
-=======
-ActiveRecord::Schema.define(version: 20141127021749) do
->>>>>>> Add prompts index
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,11 +34,18 @@ ActiveRecord::Schema.define(version: 20141127021749) do
   add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
   create_table "prompts", force: true do |t|
-    t.string   "title",      null: false
-    t.text     "body",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",       null: false
+    t.string   "category",    null: false
+    t.string   "body",        null: false
+    t.integer  "project_id"
+    t.integer  "notecard_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id",     null: false
   end
+
+  add_index "prompts", ["project_id", "notecard_id"], name: "index_prompts_on_project_id_and_notecard_id", unique: true, using: :btree
+  add_index "prompts", ["user_id"], name: "index_prompts_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                           null: false

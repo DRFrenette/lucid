@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :create, :show] do
     resources :notecards, except: [:destroy]
   end
-  resources :prompts, only: [:index]
+  resources :prompts, only: [:index, :new, :create]
 
   root "projects#index"
 end

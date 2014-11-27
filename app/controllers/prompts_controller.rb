@@ -9,12 +9,8 @@ class PromptsController < ApplicationController
   end
 
   def create
-    @prompt = Prompt.create(prompt_params)
-    if @prompt.save?
-      redirect_to prompts_path
-    else
-      redirect_to root_path
-    end
+    @prompt = current_user.prompts.create(prompt_params)
+    redirect_to prompts_path
   end
 
   private
