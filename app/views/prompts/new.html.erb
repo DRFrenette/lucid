@@ -10,6 +10,11 @@
   </div>
 
   <div>
+    <%= form.label :category, "Select an appropriate category for your prompt" %>
+    <%= form.select :category, Prompt::CATEGORY %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 
