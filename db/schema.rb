@@ -23,7 +23,7 @@
 
   add_index "notecards", ["project_id"], name: "index_notecards_on_project_id", using: :btree
 
-ActiveRecord::Schema.define(version: 20141127171157) do
+ActiveRecord::Schema.define(version: 20141209145216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
