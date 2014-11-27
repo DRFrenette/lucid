@@ -50,9 +50,9 @@ ActiveRecord::Schema.define(version: 20141127171157) do
     t.string   "email",                           null: false
     t.string   "password_digest",                 null: false
     t.integer  "level",           default: 1,     null: false
+    t.boolean  "admin",           default: false, null: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.boolean  "admin",           default: false, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
