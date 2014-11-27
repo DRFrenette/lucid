@@ -2,5 +2,7 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :prompt
 
-  validates [:user, :post, :body], presence:  true
+  validates :body, presence:  true
+  validates :prompt, presence:  true
+  validates :user, presence:  true
 end

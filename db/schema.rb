@@ -29,12 +29,17 @@ ActiveRecord::Schema.define(version: 20141209145216) do
   enable_extension "plpgsql"
 
   create_table "comments", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "prompt_id",  null: false
     t.text     "body",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
->>>>>>> Users can comment on prompts
+  add_index "comments", ["prompt_id"], name: "index_comments_on_prompt_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+>>>>>>> Prompts render on prompts/index
   create_table "projects", force: true do |t|
     t.string   "title",      null: false
     t.string   "category",   null: false
