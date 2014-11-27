@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <h2><%= link_to "lucid", root_path %></h2>
     <% if signed_in? %>
       <%= link_to "Sign out", session_path, method: :delete %>
       <%= link_to "Prompt Hub", prompts_path %>
