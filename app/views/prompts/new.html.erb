@@ -1,0 +1,15 @@
+<%= form_for @prompt do |form| %>
+  <div>
+    <%= form.label :title, "Write the title of your prompt here: " %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body, "Write the body of your prompt here: " %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
