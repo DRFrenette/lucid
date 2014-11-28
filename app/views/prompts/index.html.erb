@@ -1,3 +1,7 @@
 <h2>Prompts</h2>
+<% if current_user.admin? %>
+  <div><%= link_to "Create a New Category", new_category_path %></div>
+<% end %>
 <div><%= link_to "Create New Prompt", [:new, :prompt] %></div>
 <div><%= render @prompts %></div>
+

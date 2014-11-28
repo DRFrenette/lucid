@@ -1,0 +1,4 @@
+<% render @category %>
+<% if current_user.admin? %>
+  <%= link_to "Edit this Category", edit_category_path %>
+<% end %>

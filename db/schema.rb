@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(version: 20141209145216) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "categories", force: true do |t|
+    t.string   "title",       null: false
+    t.text     "description", null: false
+    t.text     "guidelines",  null: false
+    t.integer  "user_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "categories", ["title"], name: "index_categories_on_title", unique: true, using: :btree
+  add_index "categories", ["user_id"], name: "index_categories_on_user_id", using: :btree
+
   create_table "comments", force: true do |t|
     t.integer  "user_id",    null: false
     t.integer  "prompt_id",  null: false
