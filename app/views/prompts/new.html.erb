@@ -10,8 +10,9 @@
   </div>
 
   <div>
-    <%= form.label :category, "Select an appropriate category for your prompt" %>
-    <%= form.select :category, Prompt::CATEGORY %>
+    <%= form.label :prompt_categories %>
+    <%= form.collection_select(:category_id, @categories, :id, :title,
+                               include_blank: "Select Category") %>
   </div>
 
   <div>
