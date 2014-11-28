@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 20141209145216) do
   add_index "comments", ["prompt_id"], name: "index_comments_on_prompt_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
->>>>>>> Prompts render on prompts/index
   create_table "projects", force: true do |t|
     t.string   "title",      null: false
     t.string   "category",   null: false
@@ -64,15 +63,16 @@ ActiveRecord::Schema.define(version: 20141209145216) do
 
   create_table "prompts", force: true do |t|
     t.string   "title",       null: false
-    t.string   "category",    null: false
     t.string   "body",        null: false
     t.integer  "project_id"
     t.integer  "notecard_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id",     null: false
+    t.integer  "category_id", null: false
   end
 
+  add_index "prompts", ["category_id"], name: "index_prompts_on_category_id", using: :btree
   add_index "prompts", ["project_id", "notecard_id"], name: "index_prompts_on_project_id_and_notecard_id", unique: true, using: :btree
   add_index "prompts", ["user_id"], name: "index_prompts_on_user_id", using: :btree
 

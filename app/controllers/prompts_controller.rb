@@ -6,6 +6,7 @@ class PromptsController < ApplicationController
 
   def new
     @prompt = Prompt.new
+    @categories = Category.all
   end
 
   def create
@@ -21,6 +22,6 @@ class PromptsController < ApplicationController
   private
 
   def prompt_params
-    params.require(:prompt).permit(:title, :body, :category)
+    params.require(:prompt).permit(:title, :body, :category_id)
   end
 end
