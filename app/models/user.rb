@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
   has_many :projects, dependent: :destroy
   has_many :prompts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :categories
 end

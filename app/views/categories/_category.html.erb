@@ -1,0 +1,13 @@
+<h2><%= category.title %></h2>
+
+<div>
+  <strong><%= category.description %></strong>
+</div>
+
+<div>
+  <p><%= category.guidelines %></p>
+</div>
+
+<% if current_user.admin? %>
+  <%= button_to "Edit Category", [:edit, :category], method: :get %>
+<% end %>
