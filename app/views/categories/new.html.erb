@@ -1,5 +1,8 @@
 <h2>Create a New Category</h2>
+<%= render "error_messages", target: @category %>
+
 <%= form_for @category do |form| %>
+
   <h3>Enter the title for your category:</h3>
   <p>This must be an element of storytelling (character, plot, theme, etc.).</p>
   <div><%= form.text_field :title %></div>
