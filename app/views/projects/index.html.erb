@@ -1,5 +1,9 @@
 <h3>Displaying documents created by <%= current_user.email %></h3>
 
+<% if current_user.admin? %>
+  <p><b>Greetings, almighty admin!</b></p>
+<% end %>
+
 <div>
   <%= render "form", project: @project %>
 </div>

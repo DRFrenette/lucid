@@ -1,0 +1,13 @@
+<%= render @prompt %>
+
+<h3>Comments</h3>
+
+<div>
+  <%= form_for [@prompt, @comment] do |form|%>
+    <div><%= form.label :body, "Share your thoughts: " %></div>
+    <div><%= form.text_area :body %></div>
+    <div><%= form.submit %></div>
+  <% end %>
+</div>
+
+<%= render @prompt.comments %>

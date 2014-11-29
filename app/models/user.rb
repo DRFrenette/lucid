@@ -2,5 +2,9 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
 
-  has_many :projects
+  has_many :projects, dependent: :destroy
+  has_many :prompts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :votes, dependent: :destroy
+  has_many :categories
 end

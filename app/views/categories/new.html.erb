@@ -1,0 +1,22 @@
+<h2>Create a New Category</h2>
+<%= render "error_messages", target: @category %>
+
+<%= form_for @category do |form| %>
+
+  <h3>Enter the title for your category:</h3>
+  <p>This must be an element of storytelling (character, plot, theme, etc.).</p>
+  <div><%= form.text_field :title %></div>
+
+  <h3>Enter the description of your category:</h3>
+  <p>Give the most concise definition of this element that you can. One or two
+  sentences maximum.</p>
+  <div><%= form.text_field :description %></div>
+
+  <h3>Enter the title for your category:</h3>
+  <p>Give a detailed overview of this element, write as much as two paragraphs
+  explaining what this is, how it's used in a story, and maybe even a favorite
+  example or two.</p>
+  <div><%= form.text_area :guidelines %></div>
+
+  <%= form.submit %>
+<% end %>
