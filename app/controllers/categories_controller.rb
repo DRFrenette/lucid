@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = current_user.categories.create(category_params)
-      redirect_to @category
+    redirect_to @category
   end
 
   def show
