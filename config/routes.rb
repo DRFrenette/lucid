@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :notecards, except: [:destroy]
   resources :prompts, only: [:index, :new, :create, :show] do
     resources :comments, only: [:create]
+    resource :upvote, only: [:create]
+    resource :downvote, only: [:create]
   end
   resources :categories, except: [:index]
   root "projects#index"
