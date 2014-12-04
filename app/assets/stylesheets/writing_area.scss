@@ -17,7 +17,7 @@ $light-default: #bbb;
   left: 5%;
   font-size: $m;
   color: $light-default;
-  cursor: default;
+  // cursor: default;
 
   &:hover {
     transition: color 100ms;
@@ -44,7 +44,7 @@ $light-default: #bbb;
   position: absolute;
   top: 1%;
   right: 1%;
-  cursor: pointer;
+  // cursor: pointer;
 
   &:hover {
     color: $default;
