@@ -39,6 +39,7 @@ $light-default: #bbb;
 }
 
 .close {
+  text-decoration: none;
   font-size: $m;
   color: $light-default;
   position: absolute;
@@ -51,21 +52,28 @@ $light-default: #bbb;
   }
 }
 
-.writing-area {
-  width: 60%;
-  margin-top: 10%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 500px;
+.save-quit {
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  font-size: $s;
+  color: $default;
+}
+  .writing-area {
+    width: 60%;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
 
-  textarea {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    border: none;
-    outline: none;
-    font-size: $l;
-    color: #444;
-    resize: none;
+    textarea {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      border: none;
+      outline: none;
+      font-size: $l;
+      color: #444;
+      resize: none;
   }
 }

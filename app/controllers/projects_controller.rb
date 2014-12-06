@@ -2,9 +2,11 @@ class ProjectsController < ApplicationController
   def index
     @project = Project.new
     @projects = Project.all.page(params[:page]).per(5)
+    @notecard = Notecard.new
   end
 
   def create
+    @notecard = Notecard.new
     @project = current_user.projects.new(project_params)
     @projects = current_user.projects
     if @project.save
@@ -16,6 +18,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @notecard = Notecard.new
+    @notecards = Notecard.all
   end
 
   private
