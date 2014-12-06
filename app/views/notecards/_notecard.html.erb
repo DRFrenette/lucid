@@ -1,3 +1,4 @@
 <li>
-  <%= link_to notecard.date, edit_project_notecard_path %>
+  <%= link_to notecard.date,
+    edit_project_notecard_path(notecard.project, notecard) %>
 </li>

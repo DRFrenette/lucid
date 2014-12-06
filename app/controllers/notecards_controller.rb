@@ -1,7 +1,7 @@
 class NotecardsController < ApplicationController
   def new
     @notecard = Notecard.new
-    @project = Project.find(params[:project_id])
+    @project = load_project_from_url
   end
 
   def index
@@ -10,7 +10,7 @@ class NotecardsController < ApplicationController
   end
 
   def create
-    @project = Project.find(params[:project_id])
+    @project = load_project_from_url
     @notecard = Notecard.new(notecard_params)
     @notecards = Notecard.all
     if @notecard.save
@@ -21,6 +21,8 @@ class NotecardsController < ApplicationController
   end
 
   def edit
+    @project = load_project_from_url
+    @notecard = Notecard.find(params[:id])
   end
 
   private
@@ -28,5 +30,9 @@ class NotecardsController < ApplicationController
   def notecard_params
     params.require(:notecard).permit(:body, :project_id).
       merge(project_id: @project.id)
+  end
+
+  def load_project_from_url
+    Project.find(params[:project_id])
   end
 end
