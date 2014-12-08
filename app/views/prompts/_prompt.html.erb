@@ -1,8 +1,8 @@
 <div>
   <%= link_to prompt.title, prompt %>
-  <%= button_to "Upvote", [prompt, :upvote] %>
-  <%= button_to "Downvote", [prompt, :downvote] %>
-  <p>Votes: <%= prompt.score %></p>
+  <%= button_to "Upvote", [prompt, :upvote], class: "upvote" %>
+  <%= button_to "Downvote", [prompt, :downvote], class: "downvote" %>
+  <p id="score_<%= prompt.id %>">Votes: <%= prompt.score %></p>
 </div>
 
 <div>
