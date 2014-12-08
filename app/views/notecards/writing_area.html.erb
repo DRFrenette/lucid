@@ -1,0 +1,15 @@
+<div class="metrics">
+  <span class="word-count">0</span>
+</div>
+
+<div class="close">
+  <span><%= link_to "X", projects_path, html: {class: "close"} %></span>
+</div>
+
+<div class="save-quit hidden">
+  <span>Save and quit</span>
+</div>
+
+<%= form_for [@project, @notecard], html: {class: "writing-area"} do |form| %>
+  <%= form.text_area :body, html: {autofocus: "autofocus", class: "col-lg-6"} %>
+<% end %>

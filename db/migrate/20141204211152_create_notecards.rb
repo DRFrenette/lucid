@@ -6,6 +6,6 @@ class CreateNotecards < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :notecards, :project_id, unique: true
+    add_index :notecards, :project_id
   end
 end

@@ -4,15 +4,9 @@ class NotecardsController < ApplicationController
     @project = load_project_from_url
   end
 
-  def index
-    @notecard = Notecard.new
-    @notecards = Notecards.all.page(params[:page]).per(5)
-  end
-
   def create
     @project = load_project_from_url
     @notecard = Notecard.new(notecard_params)
-    @notecards = Notecard.all
     if @notecard.save
       redirect_to project_path(@project)
     else
@@ -25,10 +19,17 @@ class NotecardsController < ApplicationController
     @notecard = Notecard.find(params[:id])
   end
 
+  def update
+    @project = load_project_from_url
+    @notecard = @project.notecards.find(params[:id])
+    @notecard.update(notecard_params)
+    redirect_to project_path(@project)
+  end
+
   private
 
   def notecard_params
-    params.require(:notecard).permit(:body, :project_id).
+    params.require(:notecard).permit(:body).
       merge(project_id: @project.id)
   end
 
