@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @notecards = Notecard.all
+    @notecards = Notecard.all.page(params[:page]).per(5)
   end
 
   private
