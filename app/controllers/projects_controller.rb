@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @project = Project.new
-    @projects = Project.all.page(params[:page]).per(5)
+    @projects = current_user.projects.all.page(params[:page]).per(5)
   end
 
   def create
