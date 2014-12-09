@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  CATEGORY = %w(setting character plot)
+  CATEGORY = %w(Novel Short-Stories Poems Other)
   belongs_to :user
   has_many :notecards
 
