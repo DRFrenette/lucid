@@ -6,8 +6,8 @@ class NotecardsController < ApplicationController
 
   def create
     @project = load_project_from_url
-    @notecard = Notecard.new(notecard_params)
-    if @notecard.save
+    notecard = @project.notecards.new(notecard_params)
+    if notecard.save
       redirect_to project_path(@project)
     else
       redirect_to root_path

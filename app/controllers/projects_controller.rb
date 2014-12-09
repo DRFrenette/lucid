@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @notecards = Notecard.all.page(params[:page]).per(5)
+    @notecards = @project.notecards.all.page(params[:page]).per(5)
   end
 
   def destroy
