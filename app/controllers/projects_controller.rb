@@ -19,6 +19,12 @@ class ProjectsController < ApplicationController
     @notecards = Notecard.all.page(params[:page]).per(5)
   end
 
+  def destroy
+    project = current_user.projects.find(params[:id])
+    project.destroy
+    redirect_to projects_path
+  end
+
   private
 
   def project_params
