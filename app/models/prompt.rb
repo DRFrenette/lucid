@@ -10,4 +10,8 @@ class Prompt < ActiveRecord::Base
   def score
     votes.sum("value")
   end
+
+  def date
+    created_at.strftime("%B, %d, %Y")
+  end
 end

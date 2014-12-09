@@ -1,13 +1,23 @@
 <%= render @prompt %>
+<div class="prompt-section">
+  <article class="type-system-serif">
+    <h1><%= @prompt.title %></h1>
+    <h2>Category: <%= @prompt.category.title %></h2>
+    <p class="date"><%= @prompt.date %></p>
+    <p><%= @prompt.body %></p>
+    <hr>
+    <p class="author">Posted by: <%= @prompt.user.email %></p>
+  </article>
+</div>
 
 <h3>Comments</h3>
 
-<div>
-  <%= form_for [@prompt, @comment] do |form|%>
+<div class="comment-section">
+  <%= form_for [@prompt, @comment], html: { class: "comment-form" } do |form| %>
     <div><%= form.label :body, "Share your thoughts: " %></div>
     <div><%= form.text_area :body %></div>
     <div><%= form.submit %></div>
   <% end %>
 </div>
 
-<%= render @prompt.comments %>
+<%= render @prompt.comments.order("created_at DESC") %>
