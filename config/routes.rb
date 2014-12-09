@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :projects, only: [:index, :create, :show, :destroy] do
     resources :notecards, except: [:destroy]
+  end
   resources :prompts, only: [:index, :new, :create, :show] do
     resources :comments, only: [:create]
     resource :upvote, only: [:create]
