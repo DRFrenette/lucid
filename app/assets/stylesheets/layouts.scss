@@ -1,0 +1,28 @@
+body {
+  background: #f1f1f1;
+}
+
+.prompts {
+  @include outer-container;
+  @include shift(.5);
+  @include clearfix;
+  padding: 5px;
+}
+
+.prompt-section {
+  @include outer-container;
+}
+
+.new-prompt {
+  @include outer-container;
+}
+
+.prompt-links {
+  float: right;
+  @include clearfix;
+}
+
+.comment-section {
+  @include outer-container;
+  @include span-columns(5);
+}

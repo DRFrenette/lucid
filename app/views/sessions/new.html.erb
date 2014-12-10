@@ -1,23 +1,23 @@
 <div class="hero">
   <div class="hero-inner">
-    <a href="" class="lucid-logo"><%= image_tag "pencil-logo.png" %></a>
+    <a href="" class="lucid-logo"><%= image_tag "pen_icon.svg" %></a>
     <div class="hero-copy">
       <h1>Welcome to Lucid</h1>
-      <p>An app designed to combat writers block</p>
+      <p>An app designed to combat writer's block</p>
     </div>
 
-  <%= form_for :session, url: session_path do |form| %>
-    <div>
-      <%= form.label :email %>
-      <%= form.email_field :email %>
-    </div>
-    <div>
-      <%= form.label :password %>
-      <%= form.password_field :password %>
-    </div>
-    <button>
-    <%= form.submit "Sign in" %>
-    </button>
+    <%= form_for :session, url: session_path do |form| %>
+      <div>
+        <%= form.label :email %>
+        <%= form.email_field :email %>
+      </div>
+      <div>
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+      </div>
+      <button>
+        <%= form.submit "Sign in" %>
+      </button>
+    <% end %>
   </div>
 </div>
-<% end %>

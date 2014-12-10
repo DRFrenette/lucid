@@ -13,13 +13,32 @@
   </head>
 
   <body>
-    <% if signed_in? %>
-      <h2><%= link_to "lucid", root_path %></h2>
-      <%= link_to "Sign out", session_path, method: :delete %>
-      <%= link_to "Prompt Hub", prompts_path %>
-    <% else %>
-      <%= link_to "Sign up", new_user_path, html: { class: "sign-up" } %>
-    <% end %>
+    <header class="centered-navigation">
+      <div class="centered-navigation-wrapper">
+        <a href="javascript:void(0)" class="mobile-logo">
+          <img src=<%= image_path "pencil-logo.png" %> alt="Logo image">
+        </a>
+        <a href="" class="centered-navigation-menu-button"></a>
+        <ul class="centered-navigation-menu">
+          <li class="nav-link"><%= link_to "Lucid", root_path %></li>
+          <li class="nav-link"><%= link_to "Prompts", prompts_path %></li>
+          <li class="nav-link logo">
+            <a href="javascript:void(0)" class="logo">
+              <img src="<%= image_path "pencil-logo.png" %>">
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="https://DRFrenette.github.io">About the Creator</a></li>
+          <li class="nav-link">
+            <% if signed_in? %>
+              <%= link_to "Sign out", session_path, method: :delete %>
+            <% else %>
+              <%= link_to "Sign up", new_user_path, html: { class: "sign-up" } %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

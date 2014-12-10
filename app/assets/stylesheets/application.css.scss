@@ -5,6 +5,7 @@
         "neat",
         "log_in",
         "prompt_index",
+        "navigation",
         "comments",
         "prompt";
 
@@ -21,6 +22,15 @@ body {
 
 .prompt-section {
   @include outer-container;
+}
+
+.new-prompt {
+  @include outer-container;
+}
+
+.prompt-links {
+  float: right;
+  @include clearfix;
 }
 
 .comment-section {

@@ -1,6 +1,6 @@
 class PromptsController < ApplicationController
   def index
-    @prompts = Prompt.all
+    @prompts = Prompt.all.order("created_at DESC")
   end
 
   def new
@@ -15,7 +15,7 @@ class PromptsController < ApplicationController
 
   def show
     @prompt = Prompt.find(params[:id])
-    @comment = Comment.new
+    @comment = Comment.new.order("created_at DESC")
   end
 
   private

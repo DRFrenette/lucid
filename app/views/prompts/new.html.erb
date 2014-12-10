@@ -1,22 +1,15 @@
 <%= form_for @prompt do |form| %>
-  <div>
-    <%= form.label :title, "Write the title of your prompt here: " %>
+  <div class="new-prompt">
+    <%= form.label :title, "Write the Title of Your Prompt Here: " %>
     <%= form.text_field :title %>
-  </div>
 
-  <div>
-    <%= form.label :body, "Write the body of your prompt here: " %>
+    <%= form.label :body, "Write the Body of Your Prompt Here: " %>
     <%= form.text_area :body %>
-  </div>
 
-  <div>
     <%= form.label :prompt_categories %>
     <%= form.collection_select(:category_id, @categories, :id, :title,
                                include_blank: "Select Category") %>
-  </div>
 
-  <div>
     <%= form.submit %>
+    <% end %>
   </div>
-
-<% end %>

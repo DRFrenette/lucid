@@ -3,7 +3,7 @@
   $hero-background-bottom: #20392B;
   $hero-color: white;
   $gradient-angle: 10deg;
-  $hero-image: "<%= asset_path "retina.jpg" %>";
+  $hero-image: "<%= asset_path "pen.jpg" %>";
 
   @include background(url($hero-image), linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top), no-repeat $hero-background-top scroll);
 
@@ -31,6 +31,7 @@
       h1 {
         font-size: 1.6em;
         margin-bottom: .5em;
+        text-shadow: 1px 1px #000;
 
         @include media($large-screen) {
           font-size: 1.8em;
@@ -38,6 +39,7 @@
       }
 
       p {
+        text-shadow: 1px 1px #000;
         font-family: $serif;
         margin: auto;
         margin-bottom: 3em; 

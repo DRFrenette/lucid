@@ -1,16 +1,11 @@
 <div>
   <% if ! current_page?(prompt_path(prompt)) %>
-    <h3 class="title"><%= link_to prompt.title, prompt_path(prompt) %></h3>
+  <h3 class="title">
+    <%= link_to prompt.title, prompt_path(prompt) %>
+  </h3>
   <% end %>
   <%= button_to "Downvote", [prompt, :downvote], class: "downvote" %>
   <%= button_to "Upvote", [prompt, :upvote], class: "upvote" %>
-  <p id="score_<%= prompt.id %>">Votes: <%= prompt.score %></p>
-</div>
-
-<div>
-  <%= prompt.body %>
-</div>
-
-<div>
-  <p>Posted by: <%= prompt.user.email %></p>
+  <p id="score_<%= prompt.id %>">Votes: <%= prompt.score %>
+  Category: <%= prompt.category.title %></p>
 </div>

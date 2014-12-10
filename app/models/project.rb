@@ -1,10 +1,11 @@
 class Project < ActiveRecord::Base
-  CATEGORY = %w(Novel Short-Stories Poems Other)
-  belongs_to :user
-  has_many :notecards, dependent: :destroy
+  CATEGORIES = %w(setting character plot)
 
   validates :title, presence: true
   validates :category, presence: true
+
+  belongs_to :user
+  has_many :notecards, dependent: :destroy
 
   def self.incomplete
     where(completed: false)
