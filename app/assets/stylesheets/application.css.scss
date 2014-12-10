@@ -1,13 +1,13 @@
-@import "layouts",
-        "writing_area",
-        "bourbon",
-        "base/base",
-        "neat",
-        "log_in",
-        "prompt_index",
-        "navigation",
-        "comments",
-        "prompt";
+@import "bourbon";
+@import "base/base";
+@import "neat";
+@import "layouts";
+@import "writing_area";
+@import "log_in";
+@import "prompt_index";
+@import "navigation";
+@import "comments";
+@import "prompt";
 
 body {
   background: #f1f1f1;
