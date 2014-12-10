@@ -1,13 +1,15 @@
 <%= render "error_messages", target: @project %>
 
-<%= form_for project do |form| %>
+<%= form_for project, html: { class: "project-form"} do |form| %>
 
-  <div>
+  <div class="title">
     <%= form.label :title %>
     <%= form.text_field :title %>
+  </div>
+    <div class="category">
     <%= form.label :category %>
     <%= form.select :category, Project::CATEGORIES %>
+  <%= form.submit %>
   </div>
 
-  <%= form.submit %>
 <% end %>

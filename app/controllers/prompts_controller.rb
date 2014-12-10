@@ -15,7 +15,8 @@ class PromptsController < ApplicationController
 
   def show
     @prompt = Prompt.find(params[:id])
-    @comment = Comment.new.order("created_at DESC")
+    @comment = Comment.new
+    @comments = @prompt.comments.order("created_at DESC")
   end
 
   private

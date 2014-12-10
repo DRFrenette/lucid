@@ -1,0 +1,13 @@
+.project-form {
+  @include outer-container;
+  margin-bottom: 2em;
+}
+
+.title {
+  float: left;
+}
+
+.category {
+  float: right;
+}
+

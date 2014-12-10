@@ -7,7 +7,3 @@
   <%= link_to "Create New Prompt", [:new, :prompt] %>
 </div>
 <div class="prompts"><%= render @prompts.order("created_at DESC") %></div>
-
-<div class="prompts">
-  <%= render @prompts %>
-</div>
