@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  CATEGORIES = %w(setting character plot)
+  CATEGORIES = %w(Novel Short-story Poem)
 
   validates :title, presence: true
   validates :category, presence: true

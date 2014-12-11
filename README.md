@@ -1,7 +1,6 @@
 #Lucid
-## A clean, fluid application built to help combat writer's block. Built on
-Rails.
-#### Work in progress
+## A clean, fluid application built to help combat writer's block. Built on Rails.
+#### (Work in progress)
 
 ### Summary
 
