@@ -1,6 +1,6 @@
 <li>
-  <%= link_to project.title, project %> -
-  <%= project.category %>
+<div class="title"><%= link_to project.title, project, class: "title" %> -
+  <%= project.category %></div>
   <%= form_for project, method: :delete, html: { class: "delete" } do |form| %>
     <%= form.submit "Delete Project" %>
   <% end %>

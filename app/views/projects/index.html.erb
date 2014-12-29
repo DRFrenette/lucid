@@ -1,14 +1,16 @@
-<h3>Displaying documents created by <%= current_user.email %></h3>
-
-<% if current_user.admin? %>
-  <p><b>Greetings, almighty admin!</b></p>
-<% end %>
+<h3>Displaying Projects created by <%= current_user.email %></h3>
 
 <div>
+  <% if current_user.admin? %>
+    <p><b>Greetings, almighty admin!</b></p>
+  <% end %>
+</div>
+
+<div class="project-form">
   <%= render "form", project: @project %>
 </div>
 
-<div>
+<div class="projects">
   <ul>
     <%= render @projects %>
   </ul>
