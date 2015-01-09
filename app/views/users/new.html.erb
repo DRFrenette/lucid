@@ -9,15 +9,13 @@
     </ul>
   <% end %>
 
-  <div>
+  <div class="form">
     <%= form.label :email %>
     <%= form.email_field :email %>
-  </div>
-  <div>
+
     <%= form.label :password %>
     <%= form.password_field :password %>
-  </div>
-  <div>
+
     <%= form.submit "Sign up" %>
   </div>
 <% end %>
