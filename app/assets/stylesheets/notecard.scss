@@ -1,0 +1,9 @@
+.notecard {
+  padding: 10px;
+  @include outer-container;
+}
+
+.ntitle {
+  font-size: 18px;
+}
+

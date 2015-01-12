@@ -1,7 +1,10 @@
 .project-form {
-  @include span-columns(6);
+  @include clearfix;
+  @include outer-container;
+  @include position(relative, 40px null 30px null)
 }
 
 .projects {
-  float: right;
+  @include outer-container;
+  @include position(relative, 80px null null null)
 }

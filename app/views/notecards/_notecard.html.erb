@@ -1,5 +1,5 @@
-<li>
-  <%= link_to notecard.date,
-    edit_project_notecard_path(notecard.project, notecard) %>
+<li class="notecard">
+<div class="ntitle"><%= link_to notecard.date,
+  edit_project_notecard_path(notecard.project, notecard) %></div>
   <%= notecard.body.truncate(20) %>
 </li>
