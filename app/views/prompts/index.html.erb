@@ -1,9 +1,7 @@
 <h1>Prompts</h1>
 
 <div class="prompt-links">
-  <% if current_user.admin? %>
-    <%= link_to "Create a New Category", new_category_path %>
-  <% end %>
+  <%= link_to "Create a New Category", new_category_path %>
   <%= link_to "Create New Prompt", [:new, :prompt] %>
 </div>
 <div class="prompts"><%= render @prompts.order("created_at DESC") %></div>

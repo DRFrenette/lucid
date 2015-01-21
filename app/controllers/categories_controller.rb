@@ -1,13 +1,15 @@
 class CategoriesController < ApplicationController
-  before_action :require_admin
-
   def new
     @category = Category.new
   end
 
   def create
     @category = current_user.categories.create(category_params)
-    redirect_to @category
+    if @category.save
+      redirect_to prompts_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -38,12 +40,5 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).
       permit(:title, :guidelines, :description, :user_id)
-  end
-
-  def require_admin
-    unless current_user.admin?
-      flash[:error] = "You must be an admin to access this section"
-      redirect_to :back
-    end
   end
 end
